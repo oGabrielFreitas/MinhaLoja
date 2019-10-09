@@ -8,12 +8,18 @@
 
     if($connect){
 
-        $sql = "SELECT * FROM roupas";
+        $sql = "SELECT * FROM roupas WHERE id_roupa = 6";
         $query = mysqli_query($connect,$sql);
 
+        
         $coluna = mysqli_fetch_array($query,MYSQLI_NUM);
 
-        echo MYSQLI_NUM;
+        // while(mysqli_fetch_array($query,1)){
+
+        //     echo MYSQLI_NUM."/";
+
+        // }
+
 
     }
 
