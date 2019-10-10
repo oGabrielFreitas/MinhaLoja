@@ -8,7 +8,7 @@
 
     if($connect){
 
-        $sql = "SELECT * FROM roupas WHERE id_roupa = 6";
+        $sql = "SELECT * FROM roupas WHERE id_roupa = 8";
         $query = mysqli_query($connect,$sql);
 
         
@@ -49,14 +49,32 @@
 </head>
 
 <body>
+    
     <!-- Coluna para foto -->
     <div class="row">
-        <div class="col-md-6">
-        <!-- <?=$coluna[5]?> -->
+        
+        <div class="col-md-1"></div>
 
-        <img src="<?=$coluna[5]?>" alt="" style="width: 50%;">
-
+        <div class="col-md-5 fotoProdutoCol">
+            
+            <img src="<?=$coluna[5]?>" alt="" class="fotoProdutoPage">
+            
         </div>
+        
+        <div class="col-md-5">
+            <p class="titulo-produto"><?=$coluna[1]?></p>
+            <p class="precoProdutoPage">R$ <?=$coluna[2]?></p>
+            <p class="descricaoProdutoPage"><?=utf8_encode($coluna[3])?></p>
+            <p class="tamanhoProdutoPage">Tamanho: <?=$coluna[4]?></p>
+
+            <div class="col" style="text-align: center;	">
+                <form action="clica-compra-produto.php" method="post" >
+                    <input type="button" class="botaoComprarPage" value="COMPRAR">
+                </form>                
+            </div>
+        </div>
+
+        <div class="col-md-1"></div>
     </div>
 
 

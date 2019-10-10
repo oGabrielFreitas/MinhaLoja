@@ -26,14 +26,14 @@ body{
 	font-family: 'Electrolize', sans-serif;
 }
 .nav-link:active{
-	color: red;
+	color: green;
 }
 .nav-link:hover{
 	color: grey;
 }
 .nav-link:visited{
 	text-decoration: none;
-	color: red;
+	color: white;
 }
 
 .navbar-brand{
@@ -82,6 +82,67 @@ hr{
 	/* color:white;	 */
 	padding: 10%;
 	text-align: center;
+}
+
+/* Página Produto */
+
+.titulo-produto{
+	font-family: 'Electrolize', sans-serif;
+	/* text-align: center; */
+	padding: 2% 0% 2% 2%;
+	font-size: 220%;
+	font-weight: bold;
+}
+
+.fotoProdutoCol{
+	text-align: center;
+	padding: 2% 0% 0% 0%;
+}
+
+.fotoProdutoPage{
+	width: 100%;
+}
+
+.precoProdutoPage{
+	font-family: 'Electrolize', sans-serif;
+	font-size: 180%;
+	font-weight: bold;
+	color: midnightblue;
+
+	padding: 0% 0% 0% 2%;
+
+}
+
+.descricaoProdutoPage{
+	font-family: Helvetica, sans-serif;
+	padding: 5% 10% 0% 2%;
+	font-size: 120%;
+}
+
+.tamanhoProdutoPage{
+	font-family: Helvetica, sans-serif;
+	padding: 3% 0% 10% 2%;
+	font-size: 130%;
+}
+
+.botaoComprarPage{
+	font-family: 'Electrolize', sans-serif;
+	text-align: center;	
+	padding: 3% 10% 3% 10%;
+	margin: auto;
+	font-size: 120%;
+	font-weight: bold;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	background-color: rgb(180, 17, 17);
+
+}
+.botaoComprarPage:hover{
+	opacity: 0.9;
+}
+.botaoComprarPage:focus{
+	outline: none;
 }
 
 /* Animation Timers
