@@ -8,7 +8,8 @@
 
     if($connect){
 
-        $sql = "SELECT * FROM roupas WHERE id_roupa = 8";
+
+        $sql = "SELECT * FROM roupas WHERE id_roupa = 11";
         $query = mysqli_query($connect,$sql);
 
         
