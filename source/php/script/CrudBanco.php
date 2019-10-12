@@ -17,9 +17,8 @@ class CrudBanco{
 
         try {
             $this->con = new PDO("mysql:host=".$this->address.";dbname=".$this->dbname."", $this->username, $this->password);
-            // $this -> $con = new PDO("mysql:host=localhost;dbname=".$dbname."", 'root', '');
             $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->con -> exec ('set names utf8');                                    
+            // $this->con -> exec ('set names utf8');                                    
                
  
           } catch(PDOException $e) {
@@ -61,12 +60,12 @@ class CrudBanco{
 
         try{
 
-        $read = $this -> con -> prepare("SELECT * FROM".$dbname."");
-        $read = execute();
+        $read = $this->con -> prepare("SELECT * FROM roupas");
+        $read->execute();
 
-        // $row = $read->fetch(PDO::FETCH_ASSOC);
-
-        return $read -> fetchAll();
+        $row = $read->fetch(PDO::FETCH_ASSOC);
+        
+        return $row;
 
         } catch(PDOException $e) {
             echo 'Error: ' . $e->getMessage();
