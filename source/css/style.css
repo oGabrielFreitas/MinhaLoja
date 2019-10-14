@@ -140,7 +140,7 @@ hr{
 
 }
 .botaoComprarPage:hover{
-	opacity: 0.8;
+opacity: 0.8;
 }
 .botaoComprarPage:focus{
 	outline: none;
@@ -149,6 +149,21 @@ hr{
 .classedeteste{
 	text-align: center;
 	color: blue;
+}
+
+/* Painel de Controle */
+
+.foto-painel{
+	height: 15%;
+	width: auto;
+}
+
+.thead-painel{
+	text-align: center;
+}
+
+.tbody-painel{
+	text-align: center;
 }
 
 /* Animation Timers

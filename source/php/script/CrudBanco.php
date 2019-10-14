@@ -63,15 +63,56 @@ class CrudBanco{
         $read = $this->con -> prepare("SELECT * FROM roupas");
         $read->execute();
 
-        $row = $read->fetch(PDO::FETCH_ASSOC);
+        $data = $read->fetchAll(PDO::FETCH_ASSOC);
         
-        return $row;
+        return $data;
 
         } catch(PDOException $e) {
             echo 'Error: ' . $e->getMessage();
             return;
         }
 
+    }
+
+    public function update($id,$tipo,$valor,$descricao,$tamanho,$imagem){
+        
+      try {  
+
+          //Prepara o array;
+          $array = array('id' => $id,
+          ':tipo' => $tipo,
+          ':valor' => $valor,
+          ':descricao' => $descricao,
+          ':tamanho' => $tamanho,
+          ':imagem' => $imagem);
+
+          //Prepara o SQL
+          $sql = 'UPDATE roupas SET tipo = :tipo, valor = :valor, descricao = :descricao, tamanho = :tamanho, imagem = :imagem WHERE id = :id';
+
+          $create = $this->con -> prepare($sql);
+          $create -> execute($array);
+
+        } catch(PDOException $e) {
+          echo 'Error: ' . $e->getMessage();
+        }
+
+  }
+
+    public function delete($id){
+
+      try {  
+
+        //Prepara o SQL
+        $sql = 'DELETE FROM roupas WHERE id = :id';
+
+        $create = $this->con -> prepare($sql);
+        $create->bindParam(':id',$id);
+        $create -> execute();
+
+      } catch(PDOException $e) {
+        echo 'Error: ' . $e->getMessage();
+      }
+      
     }
     
 
