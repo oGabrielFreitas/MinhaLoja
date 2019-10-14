@@ -1,14 +1,3 @@
-<?php 
-
-    include("source/html/navbar.html");
-
-    include_once("source/php/script/CrudBanco.php");
-
-    $CRUD = new CrudBanco('banco_minhaloja');
-    $coluna = $CRUD->read();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,33 +22,16 @@
 </head>
 
 <body>
+     <!-- Coluna para foto -->
+     <div class="row">
+            <p class="titulo-produto" ></p>
+            <div class="col-md-6 produtoCol">
     
-    <!-- Coluna para foto -->
-    <div class="row">
-        
-        <div class="col-md-1"></div>
-
-        <div class="col-md-5 fotoProdutoCol">
-            
-            <img src="<?=$coluna[0]['imagem']?>" alt="" class="fotoProdutoPage">
-            
-        </div>
-        
-        <div class="col-md-5">
-            <p class="titulo-produto"><?=$coluna[0]['tipo']?></p>
-            <p class="precoProdutoPage">R$ <?=$coluna[0]['valor']?></p>
-            <p class="descricaoProdutoPage"><?=utf8_encode($coluna[0]['descricao'])?></p>
-            <p class="tamanhoProdutoPage">Tamanho: <?=$coluna[0]['tamanho']?></p>
-
-            <div class="col" style="text-align: center;	">
-                <form action="clica-compra-produto.php" method="post" >
-                    <input type="button" class="botaoComprarPage" value="COMPRAR">
-                </form>                
+            <img src="<?=$coluna[5]?>" alt="" class="fotoProdutoPage">
+    
+    
             </div>
         </div>
-
-        <div class="col-md-1"></div>
-    </div>
 
 
 

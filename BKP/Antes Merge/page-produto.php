@@ -41,15 +41,15 @@
 
         <div class="col-md-5 fotoProdutoCol">
             
-            <img src="<?=$coluna[0]['imagem']?>" alt="" class="fotoProdutoPage">
+            <img src="<?=$coluna['imagem']?>" alt="" class="fotoProdutoPage">
             
         </div>
         
         <div class="col-md-5">
-            <p class="titulo-produto"><?=$coluna[0]['tipo']?></p>
-            <p class="precoProdutoPage">R$ <?=$coluna[0]['valor']?></p>
-            <p class="descricaoProdutoPage"><?=utf8_encode($coluna[0]['descricao'])?></p>
-            <p class="tamanhoProdutoPage">Tamanho: <?=$coluna[0]['tamanho']?></p>
+            <p class="titulo-produto"><?=$coluna['tipo']?></p>
+            <p class="precoProdutoPage">R$ <?=$coluna['valor']?></p>
+            <p class="descricaoProdutoPage"><?=utf8_encode($coluna['descricao'])?></p>
+            <p class="tamanhoProdutoPage">Tamanho: <?=$coluna['tamanho']?></p>
 
             <div class="col" style="text-align: center;	">
                 <form action="clica-compra-produto.php" method="post" >

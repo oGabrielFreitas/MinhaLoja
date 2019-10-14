@@ -2,10 +2,27 @@
 
     include("source/html/navbar.html");
 
-    include_once("source/php/script/CrudBanco.php");
+    // include("../../../temp.html");
 
-    $CRUD = new CrudBanco('banco_minhaloja');
-    $coluna = $CRUD->read();
+    $connect = mysqli_connect("127.0.0.1","root","","banco_minhaloja","3306");
+
+    if($connect){
+
+
+        $sql = "SELECT * FROM roupas WHERE id_roupa = 11";
+        $query = mysqli_query($connect,$sql);
+
+        
+        $coluna = mysqli_fetch_array($query,MYSQLI_NUM);
+
+        // while(mysqli_fetch_array($query,1)){
+
+        //     echo MYSQLI_NUM."/";
+
+        // }
+
+
+    }
 
 ?>
 
@@ -41,15 +58,15 @@
 
         <div class="col-md-5 fotoProdutoCol">
             
-            <img src="<?=$coluna[0]['imagem']?>" alt="" class="fotoProdutoPage">
+            <img src="<?=$coluna[5]?>" alt="" class="fotoProdutoPage">
             
         </div>
         
         <div class="col-md-5">
-            <p class="titulo-produto"><?=$coluna[0]['tipo']?></p>
-            <p class="precoProdutoPage">R$ <?=$coluna[0]['valor']?></p>
-            <p class="descricaoProdutoPage"><?=utf8_encode($coluna[0]['descricao'])?></p>
-            <p class="tamanhoProdutoPage">Tamanho: <?=$coluna[0]['tamanho']?></p>
+            <p class="titulo-produto"><?=$coluna[1]?></p>
+            <p class="precoProdutoPage">R$ <?=$coluna[2]?></p>
+            <p class="descricaoProdutoPage"><?=utf8_encode($coluna[3])?></p>
+            <p class="tamanhoProdutoPage">Tamanho: <?=$coluna[4]?></p>
 
             <div class="col" style="text-align: center;	">
                 <form action="clica-compra-produto.php" method="post" >
