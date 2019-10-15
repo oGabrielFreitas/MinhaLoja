@@ -6,7 +6,6 @@
     $valor = $_POST['valor'];
     $descricao = $_POST['descricao'];
     $tamanho = $_POST['tamanho'];
-    // $imagem = $_POST['caminho-imagem'];
     
     $caminho_imagem = "source/img/".$_FILES['foto_produto']['name'];
 
@@ -17,4 +16,6 @@
 
    
     echo "saiu";
+
+    header('Location:../../../registrar-produto.php');
 ?>

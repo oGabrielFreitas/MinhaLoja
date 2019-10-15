@@ -1,10 +1,11 @@
 <?php 
 
     include("source/html/navbar.html");
-    include("index2.html");
+    include("source/html/index.html");
     
 ?>
 <html>
+
     
 <div class="row">
         <div class="col-md-4">

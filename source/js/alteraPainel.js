@@ -112,3 +112,13 @@ const clicaSalvar = (rowID) => {
 
 }
 
+const clicaDeletar = (rowID) => {
+
+    data = getData(rowID);
+
+    console.log("DELETAAAA");
+
+    post ("./source/php/script/deleta-produto.php",{id: data[0]});
+    
+}
+

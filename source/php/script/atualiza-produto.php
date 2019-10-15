@@ -14,4 +14,6 @@
 
     echo 'Atualizou produto';
 
+    header('Location:../../../paineldecontrole.php');
+
 ?>

@@ -6,9 +6,6 @@
 
 
     $CRUD = new CrudBanco('banco_minhaloja');
-
-    $data = $CRUD->read();
-
     
 
 ?>
@@ -30,7 +27,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="source/css/style.css">
-    <link rel="stylesheet" type="text/css" href="source/css/painelAdm.css">
+    <link rel="stylesheet" type="text/css" href="source/css/painelAdmAdd.css">
     <link rel="stylesheet" type="text/css" href="source/css/animate.css">
 
 </head>
@@ -42,8 +39,8 @@
     </div>
 
     <div class="row">
-        <div class="col-md-4 col-registrar">
-        <a href="registrar-produto.php"><input class="botao-registrar-novo" type="button" value="Registrar Novo Produto"></a>
+        <div class="col-md-4 col-voltar">
+        <a href="paineldecontrole.php"><input class="botao-voltar" type="button" value="Voltar"></a>
             
         </div>
     </div>
@@ -64,33 +61,26 @@
                     </tr>
                 </thead>
                 <tbody class="tbody-painel">
-                    <?php 
-                    $counter = 0;
-                    foreach($data as $datas):?>
                     <tr>
-                        <td class="data<?=$counter?>" id="campoId"><?=$datas['id_roupa']?></td>
+                        <form action="source/php/script/insere-produto.php" method="POST" enctype="multipart/form-data">
+                        <td class="data0"> </td>
 
-                        <td id="campoNome">         <textarea name="campoNom" readonly type="text" class="data<?=$counter?> textarea-adm" rows="1" cols="20"><?=$datas['tipo']?></textarea></td>
+                        <td id="campoNome">         <textarea name="tipo" type="text" class="data0 textarea-adm" rows="1" cols="20"></textarea></td>
 
-                        <td id="campoValor">        <input readonly type="text" class="data<?=$counter?> input-adm" value="<?=$datas['valor']?>"></td>
+                        <td id="campoValor">        <input name="valor" type="text" class="data0 input-adm" value=""></td>
 
-                        <td id="campoDescricao">    <textarea readonly type="text" class="data<?=$counter?> textarea-adm" rows="3" cols="30"><?=$datas['descricao']?></textarea></td>
+                        <td id="campoDescricao">    <textarea name="descricao" type="text" class="data0 textarea-adm" rows="3" cols="30"> </textarea></td>
 
-                        <td id="campoTamanho">      <input readonly type="text" class="data<?=$counter?> input-adm" value="<?=$datas['tamanho']?>"> </td>
+                        <td id="campoTamanho">      <input name="tamanho" type="text" class="data0 input-adm" value=""> </td>
 
-                        <td><img class="data<?=$counter?> foto-painel" src="<?=$datas['imagem']?>" alt=""></td>
+                        <td id="campoUpload">   
+                                                    <label for="upload-arquivo" class="label-upload">Upload</label>                            
+                                                    <input class="input-upload" name="foto_produto" type="file" id="upload-arquivo">  </td>
 
-                        <td><input class="data<?=$counter?> botaoAlterar" type="button" value="Alterar" id="botaoAlterar" onclick="clicaAltera(<?=$counter?>)" >
-                            <input class="data<?=$counter?> botaoSalvar"type="hidden" value="Salvar" onclick="clicaSalvar(<?=$counter?>)">
-                            <input class="data<?=$counter?> botaoApagar" type="hidden" value="Apagar" id="botaoDeletar" onclick="clicaDeletar(<?=$counter?>)" >
-
-
-                        </td>
+                        <td><input class="data0 botaoSalvar" type="submit" value="Salvar" onclick="clicaCriar(0)" ></td>
+                        </form>
 
                     </tr>
-                    <?php 
-                        $counter++;
-                        endforeach ?>
                 </tbody>
                 <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
 
@@ -101,7 +91,7 @@
     <!-- ------------ JAVA SCRIPT -------------- -->
 
     <!-- Referenciando e Iniciando WOW -->
-    <script src="source/js/alteraPainel.js"></script>
+    <!-- <script src="source/js/alteraPainel.js"></script> -->
     
 
 </html>

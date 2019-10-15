@@ -16,7 +16,7 @@ class CrudBanco{
         $this->dbname = $dbname;
 
         try {
-            $this->con = new PDO("mysql:host=".$this->address.";dbname=".$this->dbname."", $this->username, $this->password);
+            $this->con = new PDO("mysql:host=".$this->address.";dbname=".$this->dbname."", $this->username, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // $this->con -> exec ('set names utf8');                                    
                
@@ -103,7 +103,7 @@ class CrudBanco{
       try {  
 
         //Prepara o SQL
-        $sql = 'DELETE FROM roupas WHERE id = :id';
+        $sql = 'DELETE FROM roupas WHERE id_roupa = :id';
 
         $create = $this->con -> prepare($sql);
         $create->bindParam(':id',$id);

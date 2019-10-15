@@ -48,7 +48,7 @@
         <div class="col-md-5">
             <p class="titulo-produto"><?=$coluna[0]['tipo']?></p>
             <p class="precoProdutoPage">R$ <?=$coluna[0]['valor']?></p>
-            <p class="descricaoProdutoPage"><?=utf8_encode($coluna[0]['descricao'])?></p>
+            <p class="descricaoProdutoPage"><?=$coluna[0]['descricao']?></p>
             <p class="tamanhoProdutoPage">Tamanho: <?=$coluna[0]['tamanho']?></p>
 
             <div class="col" style="text-align: center;	">

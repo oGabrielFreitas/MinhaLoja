@@ -9,4 +9,6 @@
 
     echo 'Deletou';
 
+    header('Location:../../../paineldecontrole.php');
+
 ?>
