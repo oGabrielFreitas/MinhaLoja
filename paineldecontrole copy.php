@@ -79,7 +79,7 @@
                     <tr>
                         <td class="data<?=$counter?>" id="campoId"><?=$datas['id_roupa']?></td>
 
-                        <td id="campoNome">         <textarea name="campoNom" readonly type="text" class="data<?=$counter?> textarea-adm" rows="1" cols="20"> <?=$datas['tipo']?> </textarea></td>
+                        <td id="campoNome">         <textarea readonly type="text" class="data<?=$counter?> textarea-adm" rows="1" cols="20"> <?=$datas['tipo']?> </textarea></td>
 
                         <td id="campoValor">        <input readonly type="text" class="data<?=$counter?> input-adm" value="<?=$datas['valor']?>"></td>
 

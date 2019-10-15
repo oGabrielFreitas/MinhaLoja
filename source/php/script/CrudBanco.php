@@ -87,7 +87,7 @@ class CrudBanco{
           ':imagem' => $imagem);
 
           //Prepara o SQL
-          $sql = 'UPDATE roupas SET tipo = :tipo, valor = :valor, descricao = :descricao, tamanho = :tamanho, imagem = :imagem WHERE id = :id';
+          $sql = 'UPDATE roupas SET tipo = :tipo, valor = :valor, descricao = :descricao, tamanho = :tamanho, imagem = :imagem WHERE id_roupa = :id';
 
           $create = $this->con -> prepare($sql);
           $create -> execute($array);
